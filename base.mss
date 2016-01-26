@@ -156,17 +156,12 @@
 /* WATER AREAS
 /* ================================================================== */
 
-/*Map { 
-  background-color: @water;
-}*/
-
-
 Map{ 
   background-color:@water;
 }
 
 /*
-Das Luftbilder und Hillshaing färben das meer anders als normales wasser.
+Das Luftbilder und Hillshading färben das Meer dunkler als normales Wasser.
 versuche das hier zu fixen
 */
 
@@ -201,10 +196,6 @@ versuche das hier zu fixen
   
   	polygon-smooth: 0.6;
   	polygon-clip: false;
-	//}
-  	/*[name='Bayerischer Wald']{
-    	opacity: 0;
-	}*/
 }
 
 
@@ -287,7 +278,7 @@ versuche das hier zu fixen
   //comp-op: contrast; //WICHTIG 
 }
 
-#admin[admin_level=2][zoom>8], #landesgrenzen[zoom<=8] {
+#admin[admin_level=2][zoom>8]::body, #landesgrenzen[zoom<=8]::body {
   line-color: black;//grey;//@admin_2;
   line-width:0.5;
   line-opacity: 0.45;
@@ -302,7 +293,7 @@ versuche das hier zu fixen
   [zoom>=14] {line-width: 2;line-opacity: 0.3;}
   //comp-op: invert; //WICHTIG
 }
-/*
+
 #admin[admin_level=4][zoom>8]::case, #bundeslaender[zoom>3][zoom<=8]::case {
   line-color: white;//grey;//@admin_2;
   line-width:1;
@@ -317,7 +308,7 @@ versuche das hier zu fixen
   //comp-op: contrast;
 }
 
-#admin[admin_level=4][zoom>8], #bundeslaender[zoom>3][zoom<=8] {
+#admin[admin_level=4][zoom>8]::base, #bundeslaender[zoom>3][zoom<=8]::base {
   line-color: black;//grey;//@admin_2;
   line-width:0.25;
   line-opacity: 0.9;
@@ -331,7 +322,7 @@ versuche das hier zu fixen
   [zoom>=14] {line-width: 1;line-opacity: 0.2;}
   //comp-op: invert;
 }
-*/
+
 
 /* ================================================================== */
 /* BARRIER POINTS
@@ -364,7 +355,6 @@ versuche das hier zu fixen
 #barrier_lines[zoom>=17][stylegroup = 'hedge'] {
   line-width:3;
   line-color:darken(@park,5%);
-
 }
 
 

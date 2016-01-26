@@ -46,7 +46,7 @@
     },
     {
       "Datasource": {
-        "file": "simplified-land-polygons-complete-3857/simplified_land_polygons.shp",
+        "file": "shape/simplified-land-polygons-complete-3857/simplified_land_polygons.shp",
         "type": "shape",
         "srid": "3857"
       },
@@ -67,7 +67,7 @@
     },
     {
       "Datasource": {
-        "file": "land-polygons-split-3857/land_polygons.shp",
+        "file": "shape/land-polygons-split-3857/land_polygons.shp",
         "type": "shape",
         "srid": "3857"
       },
@@ -88,7 +88,7 @@
     {
       "Datasource": {
         "source": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip",
-        "file": "shoreline_300/shoreline_300.shp",
+        "file": "shape/shoreline_300/shoreline_300.shp",
         "id": "shoreline_300",
         "project": "OSMBright",
         "srid": "3857",
@@ -713,7 +713,7 @@
         "id": "admin",
         "key_field": "",
         "project": "OSMBright",
-        "table": "( SELECT geometry, admin_level\n  FROM osm_admin\n  WHERE type = 'administrative'\n    AND admin_level IN ('2')\n) AS data",
+        "table": "( SELECT geometry, admin_level\n  FROM osm_admin\n  WHERE type = 'administrative'\n    AND admin_level IN ('2', '4')\n) AS data",
         "type": "postgis",
         "extent_cache": "auto",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
@@ -763,7 +763,7 @@
       "class": "",
       "Datasource": {
         "source": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip",
-        "file": "10m-admin-0-boundary-lines-land/10m-admin-0-boundary-lines-land.shp",
+        "file": "shape/10m-admin-0-boundary-lines-land/10m-admin-0-boundary-lines-land.shp",
         "type": "shape",
         "srs": "+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs",
         "srid": "3857"
@@ -976,7 +976,7 @@
         "source": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip",
         "id": "laender_abk",
         "project": "OSMBright",
-        "file": "10m-admin-0-country-points/10m-admin-0-country-points.shp",
+        "file": "shape/10m-admin-0-country-points/10m-admin-0-country-points.shp",
         "srid": "3857",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
         "type": "shape"
