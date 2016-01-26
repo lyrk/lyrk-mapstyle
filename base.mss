@@ -55,7 +55,6 @@
     
   }
   [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
-  //[type='pitch']         { polygon-fill: @sports;  line-color: @standard_case*0.95; line-width: 1;}
   [type='residential']   { polygon-fill: @residential; }
   [type='school']        { polygon-fill: @school; }
   [type='sports_center'], [type='stadium'], [type='pitch'] {
@@ -67,8 +66,6 @@
       [zoom>14]{line-width: 1;}
     }
   }
-  //[type='stadium']       {
-  //  polygon-fill: @sports;  line-color: @standard_case*0.95; line-width: 1;}
   [type='university']    { polygon-fill: @school; }
   [type='wood']          { polygon-fill: @wooded; }
   [type='playground']    {
@@ -176,13 +173,9 @@ versuche das hier zu fixen
 }
 
 
-
-
-
 #water_gen0[zoom>3][zoom<=9],
 #water_gen1[zoom>9][zoom<=12],
 #water[zoom>12] {
-  //[name!="Bayerischer Wald"]{
   	polygon-fill: @water;
   	[zoom=4]{
     	polygon-fill: @water4;
@@ -261,7 +254,6 @@ versuche das hier zu fixen
 /* ================================================================== */
 /* ADMINISTRATIVE BOUNDARIES
 /* ================================================================== */
-
 
 #admin[admin_level=2][zoom>8]::case, #landesgrenzen[zoom<=8]::case {
   line-color: white;//grey;//@admin_2;
