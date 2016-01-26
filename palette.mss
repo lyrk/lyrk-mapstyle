@@ -38,24 +38,24 @@ Map { font-directory: url(./fonts); }
 /* LANDUSE & LANDCOVER COLORS
 /* ================================================================== */
  
-@land:              #FFFFF5;//#FCFBE7*1.05;
-@water:             #7DA8D7;//#90CBFC;
-@water4: 			#6A88B0;
-@water56: 			#6A88AE;
-@water7: 			#6987AD;
+@land:              #FFFFF5;
+@water:             #7DA8D7;
+@water4: 			      #6A88B0;
+@water56:           #6A88AE;
+@water7:            #6987AD;
 
 @grass:             #E6F2C1;
 @meadow:            @grass*1.05;
 @beach:             #FFEEC7;
 @park:              #DAF2C1;
 @cemetery:          #D6DED2;
-@wooded:            #C6DEAD;//#B7D696;//#A0D492;//#95DB81;//#C3D9AD;
+@wooded:            #C6DEAD;
 @agriculture:       #F2E8B6;
 
-@building:          #E8E5E3;//#E4E0E0;
-@hospital:          #F2CBCB*1.16;//rgb(229,198,195);
-@school:            #FFFAE6;//#FFF5CC;
-@sports:            #DAF1C1;//#E6F2C1;//#B8E6B8;
+@building:          #E8E5E3;
+@hospital:          #F2CBCB*1.16;
+@school:            #FFFAE6;
+@sports:            #DAF1C1;
 
 @residential:       @land * 0.975;
 @commercial:        @land * 0.975;
@@ -151,100 +151,3 @@ Map { font-directory: url(./fonts); }
 @village_halo:      @place_halo;
 
 /* ****************************************************************** */
-
-
-
-
-//hillshding
-#hillshading [zoom<12] {
-  raster-scaling:bilinear;
-  //raster-mesh-size: 16;
-  //raster-scaling:bilinear;
-  //raster-comp-op:contrast;
-  //raster-comp-op:soft-light;
-  [zoom=11] {
-  	raster-opacity:0.25;
-    raster-comp-op:soft-light;
-  }
-  [zoom=10] {
-  	raster-opacity:0.08;
-    raster-comp-op:multiply;
-  }
-  [zoom=9] {
-  	raster-opacity:0.10;
-    raster-comp-op:hard-light;
-  }
-  [zoom<9] {
-  	raster-opacity:0.15;
-    raster-comp-op:hard-light;
-  }
-  [zoom<7] {
-  	raster-opacity:0.16;
-    raster-comp-op:hard-light;
-  }
-}
-
-
-
-
-#n51e013color {
-  raster-opacity:0.3;
-  raster-scaling:lanczos;
-  raster-comp-op:multiply;
-}
-
-//farbe luftbild
-.luftbild [zoom<11][zoom>7] {
-  
-  raster-comp-op: hard-light;
-  
-  [zoom=7]{
-  	raster-opacity:0.40;
-  }
-  [zoom<=8][zoom>=7]{
-  	raster-opacity:0.25;
-  }
-  [zoom=9]{
-  	raster-opacity:0.15;
-  }
-  [zoom=10]{
-  	raster-opacity:0.10;
-  }
-  raster-scaling:bilinear;
-    //raster-scaling:lanczos;
-  //raster-comp-op:multiply;
-  raster-opacity:0;
-}
-
-.luftbild [zoom<8] {
-  raster-comp-op: hard-light;//darken;// hard-light;
-  raster-scaling:bilinear; 
-  raster-opacity:0.40;
-} 
-
-
-/*#2kmTM[zoom<8] {
-  raster-comp-op: hard-light;//darken;// hard-light;
-  raster-scaling:bilinear; 
-  raster-opacity:0.40;
-}*/
-
-#naturalearth[zoom<3] {
-  raster-opacity:0.8;
-  raster-scaling: lanczos; 
-}
-/*
-#ne2hrlcsr [zoom<7] {
-  raster-opacity:1;
-  raster-scaling:lanczos;
-}
-*/ 
-
-
-/*
-#ne1hrlcsrw {
-  [zoom<7] {raster-opacity:1;}
-  [zoom=6] {raster-opacity:0.5;}
-  
-  raster-scaling:lanczos;
-}*/
