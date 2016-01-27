@@ -6,11 +6,6 @@
 
 /* Font sets are defined in palette.mss */
 
-/* Mapnik does not yet support character-spacing adjustments for 
-   labels placed along a line. We can fake this using the replace()
-   function in the text-name parameter by replacing each character
-   with itself followed by one or more spaces. */
-
 /* ================================================================== */
 /* PLACE NAMES
 /* ================================================================== */
@@ -51,41 +46,6 @@
   }
 }
 
-/*#place::state[type='state'][zoom>=6][zoom<=7] {
-  text-name:'[name]';
-  text-face-name:@sans_bold_italic;
-  text-placement:point;
-  text-fill:@state_text;
-  text-halo-fill: @state_halo;
-  text-halo-radius: 1;
-  [zoom=6] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
-  [zoom=7] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>8] {
-    text-halo-radius: 2;
-  }*/
-  /*[zoom=8] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }*/
-  /*[zoom=9] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }*/
-  /*[zoom=10] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }*/
-//}
-
 /* ---- Cities ------------------------------------------------------ */
 
 #place::city[type='city'][zoom>=6][zoom<=14] {
@@ -97,14 +57,7 @@
   text-halo-radius:2;
   //text-avoid-edges: true;
   text-label-position-tolerance: 20;
-  /*[stylet='city_ausland']{
-  	//text-opacity: 0.1;
-    [int_name!='']{
-   		//@bernd: "[int_name]";
-      	text-name:"[int_name]";//'[int_name]''[name]';
-    	text-opacity: 0.5;
-    }
-  }*/
+
   [zoom=6] {
     text-min-distance: 20;
     text-size: 13;
@@ -171,17 +124,7 @@
   text-wrap-width: 50;
   //text-avoid-edges: true;
   text-label-position-tolerance: 20;
-  /*[stylet='city_ausland']{
-  	//text-opacity: 0.1;
-    [int_name!='']{
-   		text-name:"[int_name]";
-    	text-opacity: 0.5;
-    }
-  }
-  
-  [stylet!='']{
-  	text-name:"[stylet]";
-  }*/
+
   [zoom=9]{
   	text-min-distance: 15;
     text-size: 11.5;
@@ -298,80 +241,10 @@
 
 
 // =====================================================================
-// AREA LABELS
+// POI LABELS
 // =====================================================================
-/*
-#area_label {
-  // Bring in labels gradually as one zooms in, bases on polygon area
-  [zoom>=10][area>102400000],
-  [zoom>=11][area>25600000],
-  [zoom>=13][area>1600000],
-  [zoom>=14][area>320000],
-  [zoom>=15][area>80000],
-  [zoom>=16][area>20000],
-  [zoom>=17][area>5000],
-  [zoom>=18][area>=0] {
-    text-name: "[name]";
-    text-halo-radius: 1.5;
-    text-face-name:@sans;
-    text-size: 11;
-    text-wrap-width:30;
-    text-fill: #888;
-    text-halo-fill: #fff;
-    // Specific style overrides for different types of areas:
-    [type='park'][zoom>=10] {
-      text-face-name: @sans_lt_italic;
-      text-fill: @park * 0.6;
-      text-halo-fill: lighten(@park, 10);
-    }
-    [type='golf_course'][zoom>=10] {
-      text-fill: @sports * 0.6;
-      text-halo-fill: lighten(@sports, 10);
-    }
-    [type='cemetery'][zoom>=10] {
-      text-fill: @cemetery * 0.6;
-      text-halo-fill: lighten(@cemetery, 10);
-    }
-    [type='hospital'][zoom>=10] {
-      text-fill: @hospital * 0.6;
-      text-halo-fill: lighten(@hospital, 10);
-    }
-    [type='college'][zoom>=10],
-    [type='school'][zoom>=10],
-    [type='university'][zoom>=10] {
-      text-fill: @school * 0.6;
-      text-halo-fill: lighten(@school, 10);
-    }
-    [type='water'][zoom>=10] {
-      text-fill: @water * 0.6;
-      text-halo-fill: lighten(@water, 10);
-    }
-  }
-  [zoom=15][area>1600000],
-  [zoom=16][area>80000],
-  [zoom=17][area>20000],
-  [zoom=18][area>5000] {
-    text-name: "[name]";
-    text-size: 13;
-    text-wrap-width: 60;
-    text-character-spacing: 1;
-    text-halo-radius: 2;
-  }
-  [zoom=16][area>1600000],
-  [zoom=17][area>80000],
-  [zoom=18][area>20000] {
-    text-size: 15;
-    text-character-spacing: 2;
-    text-wrap-width: 120;
-  }
-  [zoom>=17][area>1600000],
-  [zoom>=18][area>80000] {
-    text-size: 20;
-    text-character-spacing: 3;
-    text-wrap-width: 180;
-  }
-}
-  */ 
+
+
 #poi[type='university'][zoom>=15],
 #poi[type='hospital'][zoom>=16],
 #poi[type='school'][zoom>=17],
@@ -391,28 +264,23 @@
 #waterway_label[type='river'][zoom>=13],
 #waterway_label[type='canal'][zoom>=15],
 #waterway_label[type='stream'][zoom>=17] {
-  text-name: '[name]';
+  text-name: "[name]";
   text-face-name: @sans_italic;
   text-fill: @water * 0.75;
-  text-halo-fill: @water*1.8;//fadeout(lighten(@water,5%),25%);
+  text-halo-fill: @water*1.8;
   text-halo-radius: 1;
   text-placement: line;
-  text-min-distance: 400;
+  text-min-distance: 300;
   text-size: 10;
-  [type='river'][zoom=14],
-  [type='canal'][zoom=16],
-  [type='stream'][zoom=18] {
-    text-name: "[name].replace('([\S\ ])','$1 ')";
-  }
   [type='river'][zoom=15],
   [type='canal'][zoom=17] {
     text-size: 11;
-    text-name: "[name].replace('([\S\ ])','$1 ')";
+    text-name: "[name]";
   }
   [type='river'][zoom>=16],
   [type='canal'][zoom=18] {
     text-size: 14;
-    text-name: "[name].replace('([\S\ ])','$1 ')";
+    text-name: "[name]";
     text-spacing: 300;
   }
 }
