@@ -103,9 +103,9 @@ come in as well.
 
 /* ---- Casing ----------------------------------------------- */
 
-#roads_high::outline[zoom>=11][zoom<=30],
-#tunnel[render='1_outline'][zoom>=11][zoom<=30],
-#bridge[render='1_outline'][zoom>=11][zoom<=30]{
+#roads_high::outline[zoom>=11][zoom<=22],
+#tunnel[render='1_outline'][zoom>=11][zoom<=22],
+#bridge[render='1_outline'][zoom>=11][zoom<=22]{
 	/* -- colors & styles -- */
 	line-cap: round;
 	[bridge=1],
@@ -239,9 +239,9 @@ come in as well.
 
 //lines
 
-#roads_high::body[zoom>=11][zoom<=30],
-#tunnel[render='3_inline'][zoom>=11][zoom<=30],
-#bridge[render='3_inline'][zoom>=11][zoom<=30]{
+#roads_high::body[zoom>=11][zoom<=22],
+#tunnel[render='3_inline'][zoom>=11][zoom<=22],
+#bridge[render='3_inline'][zoom>=11][zoom<=22]{
 	/* -- colors & styles -- */
 	line-color: @standard_fill;
 	[type='motorway'],
@@ -413,8 +413,8 @@ come in as well.
 
 
 /* ---- Bridge fill for dashed lines -------------------------------- */
-#tunnel[render='2_line'][zoom>=14][zoom<=30],
-#bridge[render='2_line'][zoom>=14][zoom<=30]{
+#tunnel[render='2_line'][zoom>=14][zoom<=22],
+#bridge[render='2_line'][zoom>=14][zoom<=22]{
 	/* -- colors & styles -- */
 	[stylegroup='noauto'] {
 		line-color: @land;

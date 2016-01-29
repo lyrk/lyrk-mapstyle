@@ -3,8 +3,26 @@ Der Lyrk-Mapstyle ist ein OepnStreetMap-Kartenstyle, der auf dem [OSM-Bright Sty
 ## Installation
 
 Der Style setzt auf der imposm-Version von OSM Bright auf, setzt also auf der Datenbankseite [imposm3](https://github.com/omniscale/imposm3) vorraus. Das Mapping-file dazu findet sich unter `imposm/mapping.json`. Die Datenbank kann also z.B. mit `imposm3 import -read ./germany-latest.osm.pbf -overwritecache -write -mapping ./imposm/mapping.json -connection postgis://localhost/osm_imposm -deployproduction` importiert werden.
-Zum Editieren und erzeigen der mapnik.xml files kommt [magnacarto](https://github.com/omniscale/magnacarto) zum Einsatz.
-Zu beachten ist dabei, dass die Pfade zu den shape und font Verzeichnis in der magnacarto-Konfiguration auf das Projektverzeichnis gesetzt werden sollten. Außerdem muss das XML-Output-Verzeichnis momentan auch das Projektverzeichnis gesetzt werden müssen, weil es sonst Probleme beim lesen von geojson-files gibt.
+
+Zum Editieren und Erzeugen der mapnik.xml files kann entweder [magnacarto](https://github.com/omniscale/magnacarto) oder [kosmtik](https://github.com/kosmtik/kosmtik/) verwendet werden.
+
+### Magnacarto
+
+Bei Magnacarto ist zu beachten, dass die Pfade zu den shape und font Verzeichnissen in der magnacarto-Konfiguration auf das Projektverzeichnis gesetzt werden sollten. Außerdem muss das XML-Output-Verzeichnis momentan auch das Projektverzeichnis gesetzt werden müssen, weil es sonst Probleme beim lesen von geojson-files gibt.
+
+### Kosmtik
+
+Im `localconfig.json`-File solle folgende Regel eingefügt werden, damit die Rasterfiles gelesen werden können.
+
+	{
+		"where": "Layer",
+		"if": {
+			"geometry": "raster"
+		},
+		"then": {
+			"Datasource.type": "raster"
+		}
+	}
 
 ### Shape Files
 

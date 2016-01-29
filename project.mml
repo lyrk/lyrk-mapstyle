@@ -192,7 +192,7 @@
       "id": "2kmTM",
       "class": "",
       "Datasource": {
-        "file": "./layers/2kmTM.tif"
+        "file": "./raster/2kmTM.tif"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
