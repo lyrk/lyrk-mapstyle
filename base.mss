@@ -15,10 +15,6 @@
 	polygon-fill: @land;
 	polygon-gamma: 0.75;
 }
-#processed_p[zoom>=11] {
-	polygon-fill: @land;
-	polygon-gamma: 0.75;
-}
 
 #landuse_gen0[zoom>3][zoom<=9],
 #landuse_gen1[zoom>9][zoom<=12],
