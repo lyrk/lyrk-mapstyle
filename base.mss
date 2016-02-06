@@ -282,7 +282,7 @@ versuche das hier zu fixen
   //comp-op: invert; //WICHTIG
 }
 
-#admin[admin_level=4][zoom>8]::case, #bundeslaender[zoom>3][zoom<=8]::case {
+#admin[admin_level=4][zoom>8]::case, /*#bundeslaender[zoom>3][zoom<=8]::case*/ {
   line-color: white;//grey;//@admin_2;
   line-width:1;
   line-opacity: 0.5;
@@ -296,7 +296,7 @@ versuche das hier zu fixen
   //comp-op: contrast;
 }
 
-#admin[admin_level=4][zoom>8]::base, #bundeslaender[zoom>3][zoom<=8]::base {
+#admin[admin_level=4][zoom>8]::base, /*#bundeslaender[zoom>3][zoom<=8]::base*/ {
   line-color: black;//grey;//@admin_2;
   line-width:0.25;
   line-opacity: 0.9;
