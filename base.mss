@@ -273,7 +273,7 @@ Here is a workaround to prevent this.
 	[zoom>=14] {line-width: 2;line-opacity: 0.3;}
 }
 
-#admin[admin_level=4][zoom>8]::case, #bundeslaender[zoom>3][zoom<=8]::case {
+#admin[admin_level=4][zoom>8]::case, /*#bundeslaender[zoom>3][zoom<=8]::case*/ {
 	line-color: white;
 	line-width: 1;
 	line-opacity: 0.5;
@@ -286,7 +286,7 @@ Here is a workaround to prevent this.
 	[zoom>=12] { line-width: 3; }
 }
 
-#admin[admin_level=4][zoom>8]::base, #bundeslaender[zoom>3][zoom<=8]::base {
+#admin[admin_level=4][zoom>8]::base, /*#bundeslaender[zoom>3][zoom<=8]::base*/ {
 	line-color: black;
 	line-width: 0.25;
 	line-opacity: 0.9;

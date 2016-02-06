@@ -771,16 +771,15 @@
         70.0753103641985
       ],
       "id": "landesgrenzen",
-      "class": "",
+      "class": "shp",
       "Datasource": {
         "source": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip",
-        "file": "shape/10m-admin-0-boundary-lines-land/10m-admin-0-boundary-lines-land.shp",
+        "file": "shape/ne_10m_admin_0_boundary_lines_land/ne_10m_admin_0_boundary_lines_land.shp",
         "type": "shape",
-        "srs": "+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs",
-        "srid": "3857"
+        "srid": "4326"
       },
-      "srs-name": "autodetect",
-      "srs": "+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs",
+      "srs-name": "4326",
+      "srs": "+proj=longlat +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "landesgrenzen"
     },
