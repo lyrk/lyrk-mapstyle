@@ -31,7 +31,6 @@ In the `localconfig.json` a rule has to be added in order to be able to read the
 
 The following files need to be downloaded and stored inside the `shape` directory:
 
-* http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip
 * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip
 * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip
 * http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
@@ -78,7 +77,6 @@ Im `localconfig.json`-File solle folgende Regel eingefügt werden, damit die Ras
 
 Folgende Shapefiles sollten heruntergeladen und im `shape` verzeichnis ausgepackt werden:
 
-* http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip
 * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip
 * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip
 * http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
