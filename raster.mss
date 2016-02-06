@@ -45,22 +45,14 @@
   	raster-opacity:0.10;
   }
   raster-scaling:bilinear;
-    //raster-scaling:lanczos;
-  //raster-comp-op:multiply;
   raster-opacity:0;
 }
 
 .luftbild [zoom<8] {
-  raster-comp-op: hard-light;//darken;// hard-light;
+  raster-comp-op: hard-light;
   raster-scaling:bilinear; 
   raster-opacity:0.40;
 }
-
-/*#2kmTM[zoom<8] {
-  raster-comp-op: hard-light;//darken;// hard-light;
-  raster-scaling:bilinear; 
-  raster-opacity:0.40;
-}*/
 
 #naturalearth[zoom<3] {
   raster-opacity:0.8;

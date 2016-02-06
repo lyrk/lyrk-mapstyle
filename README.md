@@ -27,14 +27,16 @@ Im `localconfig.json`-File solle folgende Regel eingefügt werden, damit die Ras
 ### Shape Files
 
 Folgende Shapefiles sollten heruntergeladen und im `./shape` verzeichnis ausgepackt werden:
+
  * http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip
  * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip
  * http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip
  * http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
  * http://data.openstreetmapdata.com/land-polygons-split-3857.zip
 
- ### Raster Files
+### Raster Files
 
- Optional können Hillshading und Satellitenbilder zur schöneren Farbgebung mit eingebunden werden. Diese Dateien Landen im `./raster` Verzeichnis.
-  * [Die überarbeiteten True-Marble Satellitenbilder mit Anleiteung](https://github.com/lyrk/true-marble-edit)
-  * **TODO** Hillshading TIFF
+Optional können Hillshading und Satellitenbilder zur schöneren Farbgebung mit eingebunden werden. Diese Dateien Landen im `./raster` Verzeichnis.
+
+ * [Die überarbeiteten True-Marble Satellitenbilder mit Anleiteung](https://github.com/lyrk/true-marble-edit)
+ * **TODO** Hillshading TIFF

@@ -71,7 +71,7 @@
   [zoom=8] {
     text-min-distance: 5;
     text-size: 14;
-    text-halo-radius:2;//1.5;
+    text-halo-radius:2;
   }
   [zoom=9] {
     text-size:15;
