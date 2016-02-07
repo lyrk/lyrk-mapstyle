@@ -32,7 +32,7 @@ In the `localconfig.json` a rule has to be added in order to be able to read the
 The following files need to be downloaded and stored inside the `shape` directory:
 
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_boundary_lines_land.zip
-* http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip
+* http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
 * http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
 * http://data.openstreetmapdata.com/land-polygons-split-3857.zip
 
@@ -78,7 +78,7 @@ Im `localconfig.json`-File solle folgende Regel eingefügt werden, damit die Ras
 Folgende Shapefiles sollten heruntergeladen und im `shape` verzeichnis ausgepackt werden:
 
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_boundary_lines_land.zip
-* http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-country-points.zip
+* http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
 * http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
 * http://data.openstreetmapdata.com/land-polygons-split-3857.zip
 
