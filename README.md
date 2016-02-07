@@ -86,5 +86,5 @@ Folgende Shapefiles sollten heruntergeladen und im `shape` verzeichnis ausgepack
 
 Optional können Hillshading und Satellitenbilder zur schöneren Farbgebung mit eingebunden werden. Diese Dateien gehören ins `raster` Verzeichnis.
 
-* [Die überarbeiteten True-Marble Satellitenbilder mit Anleiteung](https://github.com/lyrk/true-marble-edit)
+* [Die überarbeiteten True-Marble Satellitenbilder mit Anleitung](https://github.com/lyrk/true-marble-edit)
 * **TODO** Hillshading TIFF
