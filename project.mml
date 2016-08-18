@@ -464,7 +464,7 @@
         "extent": "-20010600.5027278,-37848147.406253,20020151.2778019,17390466.8287115",
         "geometry_field": "geometry",
         "key_field": "",
-        "table": "( SELECT geometry, \"type\"  AS type  , \"building:levels\"/1.5 AS building_levels                   FROM osm_buildings                                                                                                                            WHERE type NOT IN ('0','false', 'no')                                                                                                          ORDER BY ST_YMin(ST_Envelope(geometry)) DESC\n) AS data",
+	"table": "( SELECT geometry, \"type\"  AS type, \"building:levels\"::integer/1.5 AS building_levels FROM osm_buildings WHERE type NOT IN ('0','false', 'no') ORDER BY ST_YMin(ST_Envelope(geometry)) DESC ) AS data",
         "type": "postgis",
         "id": "buildings",
         "project": "OSMBright",
