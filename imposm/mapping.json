@@ -227,8 +227,13 @@
           "key": null
         },
         {
-          "type": "string",
+          "type": "integer",
           "name": "building:levels",
+          "key": "building:levels"
+        },
+        {
+          "type": "string",
+          "name": "building:levels_string",
           "key": "building:levels"
         }
       ],
