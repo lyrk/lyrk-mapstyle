@@ -183,7 +183,8 @@
       "id": "out",
       "class": "luftbild",
       "Datasource": {
-        "file": "./truemarble/cleanblue250/out.vrt"
+        "file": "./truemarble/cleanblue250/out.vrt",
+	"type": "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
@@ -202,7 +203,8 @@
       "id": "2kmTM",
       "class": "",
       "Datasource": {
-        "file": "./raster/2kmTM.tif"
+        "file": "./raster/2kmTM.tif",
+	"type": "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
@@ -247,7 +249,8 @@
       "id": "hillshading",
       "class": "",
       "Datasource": {
-        "file": "layers/srtm/komplett_hill.tiff"
+        "file": "layers/srtm/komplett_hill.tiff",
+	"type" "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
