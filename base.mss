@@ -98,7 +98,10 @@
 	}
 }
 
-#landuse_overlays[type='nature_reserve'][zoom>6] {
+#landuse_overlays[zoom>6] {
+ [type='nature_reserve'],
+ [type='protected_area'],
+ [type='national_park'] {
 	line-color: darken(@wooded,25%);
 	line-opacity:  0.3;
 	line-dasharray: 1,1;
@@ -110,13 +113,13 @@
 	[zoom=10]  { line-width: 1.0; }
 	[zoom=11]  { line-width: 1.5; }
 	[zoom>=12] { line-width: 2.0; }
+ }
 }
-
- 
+/* 
 #landuse_overlays[type='wetland'][zoom>11] {
 	[zoom>11][zoom<=14] { polygon-pattern-file:url(img/marsh-16.png); }
 	[zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
-}
+}*/
 
 /* ---- BUILDINGS ---- */
 #buildings[zoom>=14][zoom<=16] {
