@@ -26,9 +26,9 @@ Map { font-directory: url('./fonts'); }
 /* ================================================================== */
 /* LANDUSE & LANDCOVER COLORS
 /* ================================================================== */
- 
-@land:        #FFFFF5;
-@water:       #7DA8D7;
+
+@land:        #FCFBE7;
+@water:       #C4DFF6;
 @water4:      #6A88B0;
 @water56:     #6A88AE;
 @water7:      #6987AD;
@@ -38,18 +38,21 @@ Map { font-directory: url('./fonts'); }
 @beach:       #FFEEC7;
 @park:        #DAF2C1;
 @cemetery:    #D6DED2;
-@wooded:      #C6DEAD;
+@wooded:      #C3D9AD;
 @agriculture: #F2E8B6;
+@allotments:  @grass; 
 
 @building:    #E8E5E3;
 @hospital:    #F2CBCB*1.16;
-@school:      #FFFAE6;
-@sports:      #DAF1C1;
+@school:      lighten(#fdf1ba, 8%); //#fff7e6;
+@sports:      #B8E6B8;
 
 @residential: @land * 0.975;
 @commercial:  @land * 0.975;
 @industrial:  @land * 0.96;
 @parking:     #EEE;
+
+@tourism:     darken(@park,45%);
 
 /* ================================================================== */
 /* ROAD COLORS
@@ -73,16 +76,16 @@ Map { font-directory: url('./fonts'); }
 @trunk_case:      @trunk_line * 0.9;
 
 @primary_line:    #FFC859;
-@primary_fill:    lighten(@primary_line,1%);
+@primary_fill:    lighten(@primary_line,10%);
 @primary_case:    @primary_line * 0.9;
 
 @secondary_line:  #FFE873;
-@secondary_fill:  lighten(@secondary_line,1%);
+@secondary_fill:  lighten(@secondary_line,10%);
 @secondary_case:  @secondary_line * 0.9;
 
 @standard_line:   @land * 0.85;
 @standard_fill:   #fff;
-@standard_case:   @land * 0.79;
+@standard_case:   @land * 0.9;
 
 @pedestrian_line: @standard_case*0.95;
 @pedestrian_fill: #FAFAF5;
