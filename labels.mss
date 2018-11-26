@@ -422,6 +422,37 @@
 	[zoom>=18] { text-size: 13; }
 }
 
+#footwayPathTrack_label[zoom>=16] {
+  ::label {
+    text-name: '[name]';
+    text-face-name: @sans;
+    text-placement: line;
+    text-size: 11;
+    text-fill: @road_text;
+    text-halo-fill: @road_halo;
+    text-halo-radius: 1;
+    text-min-distance: 60;
+    text-min-path-length: 30;
+    //text-horizontal-alignment: adjust;
+    //text-character-spacing: 1;
+    text-line-spacing: 1;
+    [zoom>=17]  { 
+      text-size: 12;
+      text-min-distance: 40;
+      text-min-path-length: 50;
+      text-spacing: 400;
+      text-line-spacing: 2;
+    }
+    [zoom>=18] { 
+      text-size: 13;
+      text-min-distance: 60;
+      text-min-path-length: 0;
+      text-spacing: 400;
+      text-line-spacing: 3;
+    }
+  }
+}
+
 /* ================================================================== */
 /* ONE-WAY ARROWS
 /* ================================================================== */
