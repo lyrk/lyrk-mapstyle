@@ -200,7 +200,11 @@
         "highway": [
           "pedestrian",
           "footway"
-        ]
+        ],
+	"boundary": [
+	  "national_park",
+          "protected_area"
+	]
       }
     },
     "buildings": {
