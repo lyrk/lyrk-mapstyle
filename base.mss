@@ -278,12 +278,14 @@ Here is a workaround to prevent this.
 /* ADMINISTRATIVE BOUNDARIES
 /* ================================================================== */
 
-#admin[admin_level=2][zoom>8]::case, #landesgrenzen[zoom<=8]::case {
+#admin[admin_level=2][zoom>8]::case,
+#landesgrenzen[zoom<=8]::case {
 	line-color: white;
 	line-width:3.5;
 	line-opacity: 0.4;
 	//line-smooth: 1;
 	//line-rasterizer: fast;
+    [zoom<2]         { line-opacity: 0; }
 	[zoom=2]          { line-opacity: 0.6; }
 	[zoom=3]          { line-opacity: 0.45; }
 	[zoom=4]          { line-opacity: 0.45; }
@@ -292,12 +294,14 @@ Here is a workaround to prevent this.
 	[zoom>=12]        { line-width: 6; }
 }
 
-#admin[admin_level=2][zoom>8]::body, #landesgrenzen[zoom<=8]::body {
+#admin[admin_level=2][zoom>8]::body,
+#landesgrenzen[zoom<=8]::body {
 	line-color: black;
 	line-width: 0.5;
 	line-opacity: 0.45;
 	//line-smooth: 1;
 	//line-rasterizer: fast;
+    [zoom<2] { line-opacity: 0; }
 	[zoom=2] { line-opacity: 0.5; }
 	[zoom=3] { line-opacity: 0.6; }
 	[zoom=4] { line-opacity: 0.6; line-width: 0.6;}
