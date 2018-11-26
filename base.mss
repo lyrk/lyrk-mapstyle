@@ -179,7 +179,7 @@ Map{
 Areal imagery and hillshading are giving a darker color to the sea.
 Here is a workaround to prevent this.
 */
-
+/*
 #background {
 	[zoom=12] { polygon-fill: @water*1.007; }
 	[zoom=11] { polygon-fill: @water*0.985; }
@@ -205,6 +205,14 @@ Here is a workaround to prevent this.
 	}
 	polygon-smooth: 0.6;
 	polygon-clip: false;
+}*/
+
+#water_gen0[zoom>3][zoom<=9],
+#water_gen1[zoom>9][zoom<=12],
+#water[zoom>12] {
+  polygon-fill: @water;
+  polygon-smooth: 0.6;
+  polygon-clip: false;
 }
 
 /* ================================================================== */
