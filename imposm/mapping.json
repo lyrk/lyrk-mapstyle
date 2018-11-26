@@ -22,7 +22,7 @@
     },
     "waterways_gen0": {
       "source": "waterways_gen1",
-      "sql_filter": null,
+      "sql_filter": "ST_Area(geometry)>10000.000000",
       "tolerance": 200
     },
     "waterways_gen1": {
