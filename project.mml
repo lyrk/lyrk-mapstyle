@@ -43,7 +43,8 @@
       "srs-name": "autodetect",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "background"
+      "name": "background",
+      "layerId": "background"
     },
     {
       "Datasource": {
@@ -64,7 +65,8 @@
         83.6664731
       ],
       "layer": null,
-      "advanced": {}
+      "advanced": {},
+      "layerId": "land"
     },
     {
       "Datasource": {
@@ -87,7 +89,8 @@
         180,
         83.6664731
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "processed_p"
     },
     {
       "Datasource": {
@@ -110,7 +113,8 @@
         180,
         83.6664731
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "shoreline_300"
     },
     {
       "Datasource": {
@@ -140,7 +144,8 @@
       ],
       "advanced": {
         "srid": "3857"
-      }
+      },
+      "layerId": "landuse_gen0"
     },
     {
       "Datasource": {
@@ -170,7 +175,8 @@
       ],
       "advanced": {
         "srid": "3857"
-      }
+      },
+      "layerId": "landuse_gen1"
     },
     {
       "geometry": "raster",
@@ -184,13 +190,14 @@
       "class": "luftbild",
       "Datasource": {
         "file": "./truemarble/cleanblue250/out.vrt",
-	"type": "gdal"
+        "type": "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "out",
-      "status": "off"
+      "status": "off",
+      "layerId": "out"
     },
     {
       "geometry": "raster",
@@ -204,12 +211,14 @@
       "class": "",
       "Datasource": {
         "file": "./raster/2kmTM.tif",
-	"type": "gdal"
+        "type": "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "2kmTM"
+      "name": "2kmTM",
+      "status": "off",
+      "layerId": "2kmTM"
     },
     {
       "Datasource": {
@@ -236,7 +245,9 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "status": "off",
+      "layerId": "landuse"
     },
     {
       "geometry": "raster",
@@ -250,13 +261,14 @@
       "class": "",
       "Datasource": {
         "file": "layers/srtm/komplett_hill.tiff",
-	"type" "gdal"
+        "type": "gdal"
       },
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "hillshading",
-      "status": "off"
+      "status": "off",
+      "layerId": "hillshading"
     },
     {
       "Datasource": {
@@ -283,7 +295,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "waterway_low"
     },
     {
       "Datasource": {
@@ -307,7 +320,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "waterway_med"
     },
     {
       "Datasource": {
@@ -331,7 +345,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "waterway_high"
     },
     {
       "geometry": "raster",
@@ -350,7 +365,8 @@
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "naturalearth"
+      "name": "naturalearth",
+      "layerId": "naturalearth"
     },
     {
       "Datasource": {
@@ -377,7 +393,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "water_gen0"
     },
     {
       "Datasource": {
@@ -404,7 +421,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "water_gen1"
     },
     {
       "Datasource": {
@@ -431,7 +449,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "water"
     },
     {
       "Datasource": {
@@ -459,7 +478,8 @@
         85.051
       ],
       "advanced": {},
-      "status": "off"
+      "status": "off",
+      "layerId": "landuse_overlays"
     },
     {
       "Datasource": {
@@ -467,7 +487,7 @@
         "extent": "-20010600.5027278,-37848147.406253,20020151.2778019,17390466.8287115",
         "geometry_field": "geometry",
         "key_field": "",
-	"table": "( SELECT geometry, \"type\"  AS type, \"building:levels\"::integer/1.5 AS building_levels FROM osm_buildings WHERE type NOT IN ('0','false', 'no') ORDER BY ST_YMin(ST_Envelope(geometry)) DESC ) AS data",
+        "table": "( SELECT geometry, \"type\"  AS type, \"building:levels\"::integer/1.5 AS building_levels FROM osm_buildings WHERE type NOT IN ('0','false', 'no') ORDER BY ST_YMin(ST_Envelope(geometry)) DESC ) AS data",
         "type": "postgis",
         "id": "buildings",
         "project": "OSMBright",
@@ -486,7 +506,8 @@
         179.84407883234414,
         82.51145505012522
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "buildings"
     },
     {
       "Datasource": {
@@ -513,7 +534,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "aeroway"
     },
     {
       "Datasource": {
@@ -540,7 +562,8 @@
         179.9999999171866,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "tunnel"
     },
     {
       "Datasource": {
@@ -567,7 +590,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "turning_circle_case"
     },
     {
       "Datasource": {
@@ -594,7 +618,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "roads_high"
     },
     {
       "Datasource": {
@@ -618,7 +643,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "roads_med"
     },
     {
       "Datasource": {
@@ -642,7 +668,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "roads_low"
     },
     {
       "geometry": "linestring",
@@ -666,7 +693,8 @@
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "advanced": {},
-      "name": "rail_low"
+      "name": "rail_low",
+      "layerId": "rail_low"
     },
     {
       "Datasource": {
@@ -690,7 +718,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "turning_circle_fill"
     },
     {
       "Datasource": {
@@ -717,7 +746,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "bridge"
     },
     {
       "Datasource": {
@@ -744,7 +774,8 @@
         179.9999999171866,
         83.7491211730321
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "admin"
     },
     {
       "geometry": "linestring",
@@ -763,7 +794,8 @@
       "srs": "",
       "advanced": {},
       "name": "bundeslaender",
-      "status": "off"
+      "status": "off",
+      "layerId": "bundeslaender"
     },
     {
       "geometry": "linestring",
@@ -784,7 +816,8 @@
       "srs-name": "4326",
       "srs": "+proj=longlat +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "landesgrenzen"
+      "name": "landesgrenzen",
+      "layerId": "landesgrenzen"
     },
     {
       "Datasource": {
@@ -811,7 +844,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "place"
     },
     {
       "Datasource": {
@@ -838,7 +872,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "motorway_label"
     },
     {
       "Datasource": {
@@ -865,7 +900,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "mainroad_label"
     },
     {
       "Datasource": {
@@ -892,7 +928,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "minorroad_label"
     },
     {
       "Datasource": {
@@ -919,7 +956,8 @@
         179.9999999749438,
         85.051
       ],
-      "advanced": {}
+      "advanced": {},
+      "layerId": "waterway_label"
     },
     {
       "geometry": "point",
@@ -946,7 +984,8 @@
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "advanced": {},
-      "name": "housenumber"
+      "name": "housenumber",
+      "layerId": "housenumber"
     },
     {
       "geometry": "linestring",
@@ -973,7 +1012,8 @@
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "advanced": {},
-      "name": "addrinterpolation"
+      "name": "addrinterpolation",
+      "layerId": "addrinterpolation"
     },
     {
       "geometry": "point",
@@ -997,7 +1037,8 @@
       "srs-name": "4326",
       "srs": "+proj=longlat +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "laender_abk"
+      "name": "laender_abk",
+      "layerId": "laender_abk"
     }
   ],
   "scale": 1,
