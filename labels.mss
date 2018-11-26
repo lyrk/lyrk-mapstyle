@@ -525,11 +525,15 @@
   }
 }
 
-#laender_abk[zoom<5][zoom>2][iso_a2!='-99'] {
-	text-name: '[iso_a2]';
+/* ================================================================== */
+/* Country Abkürzung 
+/* ================================================================== */
+
+#laender_abk[zoom<5][zoom>2][ISO_A2!='-99'] {
+	text-name: '[ISO_A2]';
 	text-face-name: @sans_bold;
 	text-placement: point;
-	text-fill: @country_text;
+	text-fill: @country_text ;
 	text-halo-fill: @country_halo;
 	text-transform: uppercase;
 	text-halo-radius: 1;
