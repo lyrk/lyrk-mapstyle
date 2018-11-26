@@ -121,8 +121,11 @@
 	[zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
 }*/
 
-/* ---- BUILDINGS ---- */
-#buildings[zoom>=14][zoom<=16] {
+/* ================================================================== */
+/* BUILDINGS */
+/* ================================================================== */
+
+#buildings[zoom>=12][zoom<=16] {
 	polygon-fill:@building;
 	[type='church'] {
 		polygon-fill: @building*0.85;
