@@ -538,3 +538,14 @@
 	text-transform: uppercase;
 	text-halo-radius: 1;
 }
+
+/* ================================================================== */
+/* TRAIN STATIONS
+/* ================================================================== */
+
+#train_stations[zoom>15]{
+    point-file:url('img/icon/rail-12.png');  
+  [zoom>=17] { 
+    point-file:url('img/icon/rail-18.png'); 
+  }
+}
