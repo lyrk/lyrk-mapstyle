@@ -215,7 +215,6 @@
         85.051
       ],
       "advanced": {},
-      "status": "off",
       "layerId": "landuse"
     },
     {
@@ -417,7 +416,7 @@
         "key_field": "",
         "project": "osm-bright-imposm",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "table": "( SELECT geometry, area, type\n  FROM osm_landusages\n  WHERE type = 'nature_reserve'\n  ORDER BY area DESC\n) AS data",
+        "table": "( SELECT geometry, area, type\n  FROM osm_landusages\n  WHERE type in ('nature_reserve', 'wetland', 'protected_area', 'national_park')\n  ORDER BY area DESC\n) AS data",
         "type": "postgis",
         "extent_cache": "auto"
       },
@@ -434,7 +433,6 @@
         85.051
       ],
       "advanced": {},
-      "status": "off",
       "layerId": "landuse_overlays"
     },
     {
@@ -786,7 +784,7 @@
         81.13822602001464
       ],
       "id": "bundeslaender",
-      "class": "",
+      "class": "shp",
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip"
       },
@@ -794,8 +792,9 @@
       "srs": "",
       "advanced": {},
       "name": "bundeslaender",
-      "status": "off",
-      "layerId": "bundeslaender"
+      "layerId": "bundeslaender",
+      "layer": null,
+      "status": "off"
     },
     {
       "geometry": "linestring",
@@ -818,6 +817,56 @@
       "advanced": {},
       "name": "landesgrenzen",
       "layerId": "landesgrenzen"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -109.0000002,
+        -79.4063075,
+        138.5156,
+        56.0000002
+      ],
+      "id": "place_continent",
+      "class": "",
+      "Datasource": {
+        "file": "layers/continent.geojson",
+        "layer": "OGRGeoJSON",
+        "id": "place_ocean",
+        "project": "th_lyrkstyle",
+        "srs": "",
+        "type": "ogr"
+      },
+      "layer": "OGRGeoJSON",
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "place_continent",
+      "layerId": "place_continent"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -170,
+        -59.9999999,
+        89.9999999,
+        83
+      ],
+      "id": "place_ocean",
+      "class": "",
+      "Datasource": {
+        "file": "layers/ocean.geojson",
+        "layer": "OGRGeoJSON",
+        "id": "place_ocean",
+        "project": "th_lyrkstyle",
+        "srs": "",
+        "type": "ogr"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "place_ocean",
+      "layerId": "place_ocean"
     },
     {
       "Datasource": {
@@ -850,6 +899,64 @@
       ],
       "advanced": {},
       "layerId": "place"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        11.230313049984414,
+        51.35401273009607,
+        14.774043577981914,
+        53.56589354490133
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\n SELECT type, name, area, 'land' AS stylegroup,\n    ST_PointOnSurface(geometry) AS geometry\n  FROM osm_landusages\n  WHERE ((name is NOT NULL) AND (name <> ''))\n    AND geometry && !bbox!\n    AND type IN (\n      'cemetery', 'college', 'commercial', 'common', 'garden', 'golf_course',\n      'hospital', 'industrial', 'library', 'park', 'pedestrian', 'place_of_worship',\n      'playground', 'school', 'sports_center', 'stadium', 'theatre', 'allotments','forest','nature_reserve','recreation_ground','university','zoo','theme_park')\n    AND geometry && !bbox!\n    AND ST_IsValid(geometry)\n  UNION ALL\n  SELECT type, name, area, 'water' AS stylegroup,\n    ST_PointOnSurface(geometry) AS geometry\n  FROM osm_waterareas\n  WHERE ((name is NOT NULL) AND (name <> ''))\n    AND type in ( 'water', 'basin' )\n    AND geometry && !bbox!\n    AND ST_IsValid(geometry)\n  UNION ALL\n  SELECT 'building' AS type, name, ST_Area(geometry) AS area, 'building' AS stylegroup,\n    ST_PointOnSurface(geometry) AS geometry\n  FROM osm_buildings\n  WHERE ((name is NOT NULL) AND (name <> ''))\n    AND geometry && !bbox!\n    AND ST_IsValid(geometry)\n  ORDER BY area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent_cache": "auto",
+        "extent": "1250152.73017332,6684154.99989971,1644639.00805858,7088366.67236132",
+        "dbname": "osm",
+        "host": "127.0.0.1",
+        "port": "5432",
+        "user": "osm",
+        "password": "osm"
+      },
+      "id": "area_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "area_label",
+      "layerId": "area_label"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        11.24775453320298,
+        51.37183877503227,
+        14.727247328745163,
+        53.50871496747963
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nSELECT\nST_Centroid(geometry) AS geometry,\nname,\ntype\nFROM osm_amenities\nWHERE \n( name is not NULL AND name <> '') \n) AS DATA",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent_cache": "auto",
+        "extent": "1252094.30720389,6687333.14441167,1639429.67342251,7077656.42665382",
+        "dbname": "osm",
+        "host": "127.0.0.1",
+        "port": "5432",
+        "user": "osm",
+        "password": "osm"
+      },
+      "id": "poi_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "poi_label",
+      "layerId": "poi_label"
     },
     {
       "Datasource": {
@@ -948,6 +1055,35 @@
       "layerId": "minorroad_label"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        11.113106299519217,
+        51.274969622970126,
+        15.042094662176082,
+        54.29576343789398
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT geometry, type, name  FROM osm_roads\n  WHERE ((name is NOT NULL) AND (name <> ''))\n    AND type IN ('path', 'track', 'footway', 'service', 'steps', 'bridleway', 'cycleway', 'pedestrian')\n) AS data",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent_cache": "auto",
+        "extent": "1237105.334394,6670077.55302991,1674478.31825766,7226370.53575855",
+        "dbname": "osm",
+        "host": "127.0.0.1",
+        "port": "5432",
+        "user": "osm",
+        "password": "osm"
+      },
+      "id": "footwayPathTrack_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "footwayPathTrack_label",
+      "layerId": "footwayPathTrack_label"
+    },
+    {
       "Datasource": {
         "dbname": "osm",
         "user": "osm",
@@ -989,7 +1125,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "( SELECT geometry, type, type AS \"addr:housenumber\"\nFROM osm_housenumbers_ways\nWHERE type NOT IN ('0','false', 'no')\nUNION\nSELECT geometry, type,\n  CASE\n    WHEN name NOT LIKE '' /*AND length(name)<10 THEN name*/ THEN  ''\n    ELSE type\n  END AS \"addr:housenumber\"\nFROM osm_housenumbers\nWHERE type NOT IN ('0','false', 'no')\n) AS data\n",
+        "table": "( SELECT geometry, name, type, type AS \"addr:housenumber\"\nFROM osm_housenumbers_ways\nWHERE type NOT IN ('0','false', 'no')\nUNION\nSELECT geometry, name, type,\n  CASE\n    WHEN name NOT LIKE '' /*AND length(name)<10 THEN name*/ THEN  ''\n    ELSE type\n  END AS \"addr:housenumber\"\nFROM osm_housenumbers\nWHERE type NOT IN ('0','false', 'no')\n) AS data\n",
         "key_field": "",
         "geometry_field": "geometry",
         "extent_cache": "auto",
@@ -1042,6 +1178,35 @@
       "advanced": {},
       "name": "addrinterpolation",
       "layerId": "addrinterpolation"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        11.237300372107942,
+        51.35748342474311,
+        15.040629924596544,
+        53.55840456587284
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT geometry, type, name \n  FROM osm_transport_points \n  WHERE type='station' AND ((name is NOT NULL) AND (name <> ''))\n) AS DATA ",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent_cache": "auto",
+        "extent": "1250930.55531412,6684773.68119922,1674315.26441616,7086963.07163982",
+        "dbname": "osm",
+        "host": "127.0.0.1",
+        "port": "5432",
+        "user": "osm",
+        "password": "osm"
+      },
+      "id": "train_stations",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "train_stations",
+      "layerId": "train_stations"
     },
     {
       "geometry": "point",
