@@ -456,11 +456,19 @@
           "river",
           "canal",
           "drain",
-          "ditch"
+          "ditch",
+          "basin",
+          "mill_pond",
+          "pond",
+          "riverbank"	  
         ],
         "barrier": [
           "ditch"
-        ]
+        ],
+	"natural": [
+	  "water",
+	  "pond"
+	]
       }
     },
     "barrierways": {
