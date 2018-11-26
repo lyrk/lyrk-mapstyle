@@ -65,13 +65,13 @@
           "key": null
         },
         {
-          "type": "pseudoarea",
+          "type": "webmerc_area",
           "name": "area",
           "key": null
         },
         {
           "args": {
-            "ranks": [
+            "values": [
               "pedestrian",
               "footway",
               "playground",
@@ -120,9 +120,8 @@
               "land"
             ]
           },
-          "type": "zorder",
-          "name": "z_order",
-          "key": "z_order"
+          "type": "enumerate",
+          "name": "z_order"
         }
       ],
       "type": "polygon",
@@ -278,7 +277,7 @@
         },
         {
           "args": {
-            "ranks": [
+            "values": [
               "country",
               "state",
               "region",
@@ -292,9 +291,8 @@
               "locality"
             ]
           },
-          "type": "zorder",
-          "name": "z_order",
-          "key": "z_order"
+          "type": "enumerate",
+          "name": "z_order"
         },
         {
           "type": "integer",
@@ -574,7 +572,7 @@
           "key": null
         }
       ],
-      "type": "point",
+      "type": "polygon",
       "mapping": {
         "amenity": [
           "university",
@@ -753,12 +751,9 @@
       ],
       "type": "linestring",
       "filters": {
-        "exclude_tags": [
-          [
-            "area",
-            "yes"
-          ]
-        ]
+        "reject": {
+            "area": [ "yes" ]
+	}
       },
       "mappings": {
         "railway": {
@@ -895,7 +890,7 @@
           "key": null
         },
         {
-          "type": "pseudoarea",
+          "type": "webmerc_area",
           "name": "area",
           "key": null
         }
