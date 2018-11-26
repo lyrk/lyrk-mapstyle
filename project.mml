@@ -119,6 +119,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "landuse_gen0",
@@ -150,6 +154,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.3427892,-37848723.6111659,20037508.3335705,18461504.0932102",
         "geometry_field": "geometry",
         "id": "landuse_gen1",
@@ -223,6 +231,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "landuse",
@@ -273,6 +285,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "waterway",
@@ -301,6 +317,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "key_field": "",
@@ -326,6 +346,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "key_field": "",
@@ -371,6 +395,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "water_gen0",
@@ -399,6 +427,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "water_gen1",
@@ -427,6 +459,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "water",
@@ -455,6 +491,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "landuse_overlays",
@@ -484,6 +524,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20010600.5027278,-37848147.406253,20020151.2778019,17390466.8287115",
         "geometry_field": "geometry",
         "key_field": "",
@@ -512,6 +556,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "aeroway",
@@ -540,6 +588,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.3427892,-37848438.145345,20037508.3335705,38098535.2199843",
         "geometry_field": "geometry",
         "id": "tunnel",
@@ -568,6 +620,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "turning_circle_case",
@@ -596,6 +652,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "roads_high",
@@ -624,6 +684,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "key_field": "",
@@ -649,6 +713,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "key_field": "",
@@ -686,7 +754,11 @@
         "geometry_field": "geometry",
         "extent_cache": "auto",
         "extent": "-20037508.3427892,-37848438.145345,20037508.3335705,38098535.2199843",
-        "dbname": "osm"
+        "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1"
       },
       "id": "rail_low",
       "class": "",
@@ -699,6 +771,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "key_field": "",
@@ -724,6 +800,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "bridge",
@@ -752,6 +832,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.3427892,-118731221.529192,20037508.3335705,18545450.7560212",
         "geometry_field": "geometry",
         "id": "admin",
@@ -822,6 +906,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "place",
@@ -850,6 +938,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "motorway_label",
@@ -878,6 +970,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "mainroad_label",
@@ -906,6 +1002,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "minorroad_label",
@@ -934,6 +1034,10 @@
     {
       "Datasource": {
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "geometry",
         "id": "waterway_label",
@@ -975,6 +1079,10 @@
         "extent_cache": "auto",
         "extent": "-18540768.6816709,-13039617.5568698,19865121.4488009,70008557.8563217",
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "id": "housenumber",
         "project": "OSMBright",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
@@ -1003,6 +1111,10 @@
         "extent_cache": "auto",
         "extent": "-15682040.8796366,-5759940.63923787,19455212.1156557,10968230.4278302",
         "dbname": "osm",
+        "user": "osm",
+        "password": "osm",
+        "port": "5432",
+        "host": "127.0.0.1",
         "id": "addrinterpolation",
         "project": "OSMBright",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
