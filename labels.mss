@@ -241,18 +241,76 @@
 // POI LABELS
 // =====================================================================
 
-
-#poi[type='university'][zoom>=15],
-#poi[type='hospital'][zoom>=16],
-#poi[type='school'][zoom>=17],
-#poi[type='library'][zoom>=17] {
+#poi_label[type='university'][zoom>=15],
+#poi_label[type='hospital'][zoom>=16],
+#poi_label[type='school'][zoom>=17],
+#poi_label[type='library'][zoom>=17] {
+  ::label {
 	text-name: '[name]';
 	text-face-name: @sans;
 	text-size: 10;
 	text-wrap-width: 30;
 	text-fill: @poi_text;
+    text-placement: point;
+    text-halo-radius: 1;
+  }
 }
 
+#poi_label[zoom>=15]{
+  [type='university'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/university-12.png);
+    marker-opacity: 0.45;
+    marker-transform: "scale(1.3)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=16]{marker-transform: "scale(1.5)"; }
+    [zoom=17]{ marker-transform: "scale(1.7)"; }
+    [zoom>=18]{ marker-transform: "scale(2.2)";  marker-file: url(img/icon/university-18.png);}
+  }
+  [type='hospital'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/hospital.svg);
+    marker-opacity: 0.25;
+    marker-transform: "scale(0.8)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=16]{ marker-transform: "scale(1.0)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; }
+  }
+  [type='school'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/school-12.png);
+    marker-opacity: 0.65;
+    marker-transform: "scale(0.9)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    //marker-allow-overlap: false;
+    [zoom=16]{marker-transform: "scale(1.1)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; marker-file: url(img/icon/school-18.png); }
+  }
+  [type='library'][zoom>=15][zoom<=16] {
+    marker-file: url(img/icon/library.svg);
+    marker-opacity: 0.25;
+    marker-transform: "scale(0.8)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    [zoom=16]{marker-transform: "scale(1.0)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; }
+  }/*
+  [type='parking'][zoom>=17]{
+    marker-file: url(img/icon/parking.svg);
+    marker-opacity: 0.25;
+    marker-allow-overlap: false;
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=17]{ marker-transform: "scale(0.3)"; }
+    [zoom>=18]{ marker-transform: "scale(0.5)"; }
+  }*/
+}
 
 /* ================================================================== */
 /* WATERWAY LABELS
