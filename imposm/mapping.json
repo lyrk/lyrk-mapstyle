@@ -292,7 +292,10 @@
               "hamlet",
               "suburb",
               "neighbourhood",
-              "locality"
+              "locality",
+	      "continent",
+	      "sea",
+              "ocean"
             ]
           },
           "type": "enumerate",
