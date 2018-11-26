@@ -54,7 +54,10 @@
 		polygon-opacity: 0.9;
 		[zoom>=17]{
 			marker-file: url(img/icon/parking.svg);
-			marker-opacity: 0.25;
+            marker-opacity: 0.25;
+            marker-allow-overlap: true;
+            marker-placement: interior;
+            marker-direction: auto-down;
 		}
 		[zoom=17]{
 			marker-transform: "scale(0.3)";
