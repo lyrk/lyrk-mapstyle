@@ -386,6 +386,11 @@
           "type": "integer",
           "name": "admin_level",
           "key": "admin_level"
+        },
+        {
+          "type": "webmerc_area",
+          "name": "area",
+          "key": null
         }
       ],
       "type": "polygon",
