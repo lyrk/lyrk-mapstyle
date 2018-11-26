@@ -24,7 +24,14 @@
 	[type='commercial']        { polygon-fill: @industrial; }
 	[type='common']            { polygon-fill: @park; }
 	[type='forest']            { polygon-fill: @wooded; }
-	[type='golf_course']       { polygon-fill: @sports; line-color: @standard_case*0.95; line-width: 1; }
+	[type='golf_course']       { 
+      polygon-fill: @sports;
+      [zoom>9]{
+        line-color: @standard_case*0.95;
+		line-width: 0.5;
+		[zoom>12]{line-width: 1;}
+	  }
+    }
 	[type='grass']             { polygon-fill: @grass; polygon-opacity: 0.6; }
 	[type='recreation_ground'] { polygon-fill: @grass; }
 	[type='meadow']            { polygon-fill: @grass; polygon-opacity: 0.5;}
