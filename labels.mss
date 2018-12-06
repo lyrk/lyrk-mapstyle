@@ -643,10 +643,10 @@
     text-name: '[addr_housenumber]';   
     /*[addr_housename != null] {
       text-name: [addr_housenumber]; //+ "\n" + [addr_housename];
-    }
+    }*/
     [name != null] {
       text-name: [addr_housenumber] + "\n" + [name];
-    }*/
+    }
     text-placement: point;
     text-face-name: @sans;
     text-fill: @poi_text;
