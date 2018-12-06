@@ -22,7 +22,7 @@
     },
     "waterways_gen0": {
       "source": "waterways_gen1",
-      "sql_filter": null,
+      "sql_filter": "ST_Area(geometry)>10000.000000",
       "tolerance": 200
     },
     "waterways_gen1": {
@@ -65,13 +65,13 @@
           "key": null
         },
         {
-          "type": "pseudoarea",
+          "type": "webmerc_area",
           "name": "area",
           "key": null
         },
         {
           "args": {
-            "ranks": [
+            "values": [
               "pedestrian",
               "footway",
               "playground",
@@ -120,9 +120,8 @@
               "land"
             ]
           },
-          "type": "zorder",
-          "name": "z_order",
-          "key": "z_order"
+          "type": "enumerate",
+          "name": "z_order"
         }
       ],
       "type": "polygon",
@@ -201,7 +200,11 @@
         "highway": [
           "pedestrian",
           "footway"
-        ]
+        ],
+	"boundary": [
+	  "national_park",
+          "protected_area"
+	]
       }
     },
     "buildings": {
@@ -278,7 +281,7 @@
         },
         {
           "args": {
-            "ranks": [
+            "values": [
               "country",
               "state",
               "region",
@@ -289,12 +292,14 @@
               "hamlet",
               "suburb",
               "neighbourhood",
-              "locality"
+              "locality",
+	      "continent",
+	      "sea",
+              "ocean"
             ]
           },
-          "type": "zorder",
-          "name": "z_order",
-          "key": "z_order"
+          "type": "enumerate",
+          "name": "z_order"
         },
         {
           "type": "integer",
@@ -381,6 +386,11 @@
           "type": "integer",
           "name": "admin_level",
           "key": "admin_level"
+        },
+        {
+          "type": "webmerc_area",
+          "name": "area",
+          "key": null
         }
       ],
       "type": "polygon",
@@ -451,11 +461,19 @@
           "river",
           "canal",
           "drain",
-          "ditch"
+          "ditch",
+          "basin",
+          "mill_pond",
+          "pond",
+          "riverbank"	  
         ],
         "barrier": [
           "ditch"
-        ]
+        ],
+	"natural": [
+	  "water",
+	  "pond"
+	]
       }
     },
     "barrierways": {
@@ -574,7 +592,7 @@
           "key": null
         }
       ],
-      "type": "point",
+      "type": "polygon",
       "mapping": {
         "amenity": [
           "university",
@@ -753,12 +771,9 @@
       ],
       "type": "linestring",
       "filters": {
-        "exclude_tags": [
-          [
-            "area",
-            "yes"
-          ]
-        ]
+        "reject": {
+            "area": [ "yes" ]
+	}
       },
       "mappings": {
         "railway": {
@@ -895,7 +910,7 @@
           "key": null
         },
         {
-          "type": "pseudoarea",
+          "type": "webmerc_area",
           "name": "area",
           "key": null
         }

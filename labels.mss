@@ -237,22 +237,222 @@
 	}
 }
 
+/* ---- Continent places ------------------------------------------ */
+
+#place_continent[type='continent'][zoom>=0][zoom<=2] {
+	text-name: '[name]';
+	text-face-name: @sans;
+	text-fill: @locality_text;
+	text-size: 9;
+	text-halo-fill: @locality_halo;
+	text-halo-radius: 1;
+	text-wrap-width: 30;
+    [zoom>=1] {
+		text-size:10;
+		text-wrap-width: 60;
+		text-line-spacing: 1;
+	}
+	[zoom>=2] {
+		text-size: 11;
+		text-wrap-width: 120;
+		text-line-spacing: 2;
+	}
+}
+
+/* ---- Sea is a part of an ocean. and Ocean places ------------------------------------------ */
+
+#place_ocean[type='ocean'][zoom>=1][zoom<5] {
+	text-name: '[name]';
+	text-face-name: @sans_italic;
+	text-fill: @water * 0.75;
+	text-halo-fill: @water*1.8;
+	text-halo-radius: 1;
+  	text-wrap-width: 10;
+	text-size: 9;
+    [zoom>=2] {
+		text-size:10;
+		text-wrap-width: 60;
+		text-line-spacing: 1;
+	}
+	[zoom>=3] {
+		text-size: 11;
+		text-wrap-width: 120;
+		text-line-spacing: 2;
+	}
+}
+
+
+// =====================================================================
+// AREA LABELS
+// =====================================================================
+
+#area_label {
+  ::label { 
+    // Bring in labels gradually as one zooms in, bases on polygon area
+    [zoom>=10][area>102400000],
+    [zoom>=11][area>25600000],
+    [zoom>=13][area>1600000],
+    [zoom>=14][area>320000],
+    [zoom>=15][area>80000],
+    [zoom>=16][area>20000],
+    [zoom>=17][area>5000],
+    [zoom>=18][area>=0] {
+      text-name: "[name]";
+      text-halo-radius: 1.5;
+      text-face-name:@sans;
+      text-size: 11;
+      text-wrap-width:30;
+      text-fill: #888;
+      text-halo-fill: #fff;
+      // Specific style overrides for different types of areas:
+      [type='park'],[type='forest'],[type='recreation_ground'][zoom>=10] {
+        text-face-name: @sans_lt_italic;
+        text-fill: @park * 0.6;
+        text-halo-fill: lighten(@park, 10%);
+      }
+      [type='nature_reserve'][zoom>10]{
+        text-face-name: @sans_lt_italic;
+        text-fill: @wooded * 0.6;
+        text-halo-fill: lighten(@wooded, 10%);
+      }
+      [type='allotments'][zoom>=10] {
+        text-face-name: @sans_lt_italic;
+        text-fill: @park * 0.6;
+        text-halo-fill: lighten(@park, 10%);
+      }
+      [type='plant_nursery'][zoom>=10] {
+        text-face-name: @sans_lt_italic;
+        text-fill: @park * 0.6;
+        text-halo-fill: lighten(@park, 10%);
+      }
+      [type='golf_course'][zoom>=10] {
+        text-fill: @sports * 0.6;
+        text-halo-fill: lighten(@sports, 10%);
+      }
+      [type='cemetery'][zoom>=10] {
+        text-fill: @cemetery * 0.6;
+        text-halo-fill: lighten(@cemetery, 10%);
+      }
+      [type='hospital'][zoom>=10] {
+        text-fill: @hospital * 0.6;
+        text-halo-fill: lighten(@hospital, 10%);
+      }
+      [type='college'][zoom>=10],
+      [type='school'][zoom>=10],
+      [type='university'][zoom>=10] {
+        text-fill: @school * 0.6;
+        text-halo-fill: lighten(@school, 10%);
+      }
+      [type='water'][zoom>=10] {
+        text-fill: @water * 0.6;
+        text-halo-fill: lighten(@water, 10%);
+      }
+      [type='building'][zoom<=17]{
+        text-name: '';
+        text-opacity: 0;
+        text-halo-opacity: 0;
+      }
+    }
+    [zoom=15][area>1600000],
+    [zoom=16][area>80000],
+    [zoom=17][area>20000],
+    [zoom=18][area>5000] {
+      text-name: "[name]";
+      text-size: 13;
+      text-wrap-width: 60;
+      text-character-spacing: 1;
+      text-halo-radius: 2;
+    }
+    [zoom=16][area>1600000],
+    [zoom=17][area>80000],
+    [zoom=18][area>20000] {
+      text-size: 15;
+      text-character-spacing: 2;
+      text-wrap-width: 120;
+    }
+    [zoom>=17][area>1600000],
+    [zoom>=18][area>80000] {
+      text-size: 20;
+      text-character-spacing: 3;
+      text-wrap-width: 180;
+    }
+  }
+}
+
 // =====================================================================
 // POI LABELS
 // =====================================================================
 
-
-#poi[type='university'][zoom>=15],
-#poi[type='hospital'][zoom>=16],
-#poi[type='school'][zoom>=17],
-#poi[type='library'][zoom>=17] {
+#poi_label[type='university'][zoom>=15],
+#poi_label[type='hospital'][zoom>=16],
+#poi_label[type='school'][zoom>=17],
+#poi_label[type='library'][zoom>=17] {
+  ::label {
 	text-name: '[name]';
 	text-face-name: @sans;
 	text-size: 10;
 	text-wrap-width: 30;
 	text-fill: @poi_text;
+    text-placement: point;
+    text-halo-radius: 1;
+  }
 }
 
+#poi_label[zoom>=15]{
+  [type='university'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/university-12.png);
+    marker-opacity: 0.45;
+    marker-transform: "scale(1.3)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=16]{marker-transform: "scale(1.5)"; }
+    [zoom=17]{ marker-transform: "scale(1.7)"; }
+    [zoom>=18]{ marker-transform: "scale(2.2)";  marker-file: url(img/icon/university-18.png);}
+  }
+  [type='hospital'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/hospital.svg);
+    marker-opacity: 0.25;
+    marker-transform: "scale(0.8)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=16]{ marker-transform: "scale(1.0)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; }
+  }
+  [type='school'][zoom>=15][zoom<=16]{
+    marker-file: url(img/icon/school-12.png);
+    marker-opacity: 0.65;
+    marker-transform: "scale(0.9)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    //marker-allow-overlap: false;
+    [zoom=16]{marker-transform: "scale(1.1)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; marker-file: url(img/icon/school-18.png); }
+  }
+  [type='library'][zoom>=15][zoom<=16] {
+    marker-file: url(img/icon/library.svg);
+    marker-opacity: 0.25;
+    marker-transform: "scale(0.8)";
+    marker-placement: interior;
+    marker-direction: auto-down;
+    [zoom=16]{marker-transform: "scale(1.0)"; }
+    [zoom=17]{ marker-transform: "scale(1.4)"; }
+    [zoom>=18]{ marker-transform: "scale(1.9)"; }
+  }/*
+  [type='parking'][zoom>=17]{
+    marker-file: url(img/icon/parking.svg);
+    marker-opacity: 0.25;
+    marker-allow-overlap: false;
+    marker-placement: interior;
+    marker-direction: auto-down;
+    marker-allow-overlap: false;
+    [zoom=17]{ marker-transform: "scale(0.3)"; }
+    [zoom>=18]{ marker-transform: "scale(0.5)"; }
+  }*/
+}
 
 /* ================================================================== */
 /* WATERWAY LABELS
@@ -364,6 +564,37 @@
 	[zoom>=18] { text-size: 13; }
 }
 
+#footwayPathTrack_label[zoom>=16] {
+  ::label {
+    text-name: '[name]';
+    text-face-name: @sans;
+    text-placement: line;
+    text-size: 11;
+    text-fill: @road_text;
+    text-halo-fill: @road_halo;
+    text-halo-radius: 1;
+    text-min-distance: 60;
+    text-min-path-length: 30;
+    //text-horizontal-alignment: adjust;
+    //text-character-spacing: 1;
+    text-line-spacing: 1;
+    [zoom>=17]  { 
+      text-size: 12;
+      text-min-distance: 40;
+      text-min-path-length: 50;
+      text-spacing: 400;
+      text-line-spacing: 2;
+    }
+    [zoom>=18] { 
+      text-size: 13;
+      text-min-distance: 60;
+      text-min-path-length: 0;
+      text-spacing: 400;
+      text-line-spacing: 3;
+    }
+  }
+}
+
 /* ================================================================== */
 /* ONE-WAY ARROWS
 /* ================================================================== */
@@ -383,30 +614,80 @@
 	[oneway=-1] { marker-file: url('img/icon/oneway-reverse.svg'); }	
 }
 
-/* Addresses */
+/* ================================================================== */
+/* Housenumbers
+/* ================================================================== */
 
-#addrinterpolation[zoom>=17] {
+#addrinterpolation_label[zoom>=17] {
 	line-width: 1;
-	line-color: #bbbbbb;
+	line-color: #bababa;
 	line-dasharray: 4, 4;
 }
 
-#housenumber[zoom>=17] {
-	text-name: '[addr:housenumber]';
+/*
+#housenumbers[zoom >= 17] {
+  ::label {
+    text-name: '[addr:housenumber]';
 	text-face-name: @sans;
 	text-placement: point;
 	text-size: 10;
 	text-wrap-width: 10;
 	text-fill: @poi_text;
 	text-min-distance: 3;
+  }    
+}
+*/
+
+#housenumber[zoom >= 17] {
+  ::label {
+    text-name: '[addr_housenumber]';   
+    /*[addr_housename != null] {
+      text-name: [addr_housenumber]; //+ "\n" + [addr_housename];
+    }*/
+    [name != null] {
+      text-name: [addr_housenumber] + "\n" + [name];
+    }
+    text-placement: point;
+    text-face-name: @sans;
+    text-fill: @poi_text;
+    text-halo-radius: 1;
+    text-halo-fill: @road_halo;
+    text-size: 10;
+    text-wrap-width: 30; // 3.0 em
+    text-line-spacing: -1.5; // -0.15 em
+    //text-margin: 3; // 0.3 em
+    text-min-distance: 3;
+    [zoom >= 20] {
+      text-size: 11;
+      text-wrap-width: 22; // 2.0 em
+      text-line-spacing: -1.65; // -0.15 em
+      //text-margin: 3.3; // 0.3 em
+      text-min-distance: 3.3;
+    }
+  }
 }
 
-#laender_abk[zoom<5][zoom>2][iso_a2!='-99'] {
-	text-name: '[iso_a2]';
+/* ================================================================== */
+/* Country Abkürzung 
+/* ================================================================== */
+
+#laender_abk[zoom<5][zoom>2][ISO_A2!='-99'] {
+	text-name: '[ISO_A2]';
 	text-face-name: @sans_bold;
 	text-placement: point;
-	text-fill: @country_text;
+	text-fill: @country_text ;
 	text-halo-fill: @country_halo;
 	text-transform: uppercase;
 	text-halo-radius: 1;
+}
+
+/* ================================================================== */
+/* TRAIN STATIONS
+/* ================================================================== */
+
+#train_stations[zoom>15]{
+    point-file:url('img/icon/rail-12.png');  
+  [zoom>=17] { 
+    point-file:url('img/icon/rail-18.png'); 
+  }
 }
