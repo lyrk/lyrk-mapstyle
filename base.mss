@@ -24,7 +24,14 @@
 	[type='commercial']        { polygon-fill: @industrial; }
 	[type='common']            { polygon-fill: @park; }
 	[type='forest']            { polygon-fill: @wooded; }
-	[type='golf_course']       { polygon-fill: @sports; line-color: @standard_case*0.95; line-width: 1; }
+	[type='golf_course']       { 
+      polygon-fill: @sports;
+      [zoom>9]{
+        line-color: @standard_case*0.95;
+		line-width: 0.5;
+		[zoom>12]{line-width: 1;}
+	  }
+    }
 	[type='grass']             { polygon-fill: @grass; polygon-opacity: 0.6; }
 	[type='recreation_ground'] { polygon-fill: @grass; }
 	[type='meadow']            { polygon-fill: @grass; polygon-opacity: 0.5;}
@@ -34,12 +41,23 @@
 	[type='hospital']          { polygon-fill: @hospital; }
 	[type='industrial']        { polygon-fill: @industrial; }
 	[type='park']              { polygon-fill: @park; }
+    [type='zoo'],[type='theme_park']{      
+      line-color: darken(@wooded,25%);
+      line-opacity:  0.3;
+      line-dasharray: 1,1;
+      polygon-fill: darken(@wooded,25%);
+      polygon-opacity: 0.1;
+    }
+    [type='garden'] { polygon-fill: @park; }
 	[type='parking'] {
 		polygon-fill: @parking*1.05;
 		polygon-opacity: 0.9;
 		[zoom>=17]{
 			marker-file: url(img/icon/parking.svg);
-			marker-opacity: 0.25;
+            marker-opacity: 0.25;
+            marker-allow-overlap: true;
+            marker-placement: interior;
+            marker-direction: auto-down;
 		}
 		[zoom=17]{
 			marker-transform: "scale(0.3)";
@@ -48,12 +66,17 @@
 			marker-transform: "scale(0.5)";
 		}
 	}
-	[type='pedestrian']  { polygon-fill: @pedestrian_fill; }
-	[type='residential'] { polygon-fill: @residential; }
-	[type='school']      { polygon-fill: @school; }
+    [type = 'allotments'] {
+      [zoom >= 10] { polygon-fill: @allotments; polygon-gamma: 0.65;}
+    }
+    [type='plant_nursery']{
+      [zoom>=10 ]{polygon-fill: @allotments; polygon-gamma: 0.95;}
+    }
+	[type='pedestrian']      { polygon-fill: @pedestrian_fill; }
+	[type='residential']     { polygon-fill: @residential; }
+	[type='school']          { polygon-fill: @school; }
 	[type='sports_center'], [type='stadium'], [type='pitch'] {
 		polygon-fill: @sports;
-		
 		[zoom>13]{
 			line-color: @standard_case*0.95;
 			line-width: 0.5;
@@ -78,7 +101,10 @@
 	}
 }
 
-#landuse_overlays[type='nature_reserve'][zoom>6] {
+#landuse_overlays[zoom>6] {
+ [type='nature_reserve'],
+ [type='protected_area'],
+ [type='national_park'] {
 	line-color: darken(@wooded,25%);
 	line-opacity:  0.3;
 	line-dasharray: 1,1;
@@ -90,16 +116,19 @@
 	[zoom=10]  { line-width: 1.0; }
 	[zoom=11]  { line-width: 1.5; }
 	[zoom>=12] { line-width: 2.0; }
+ }
 }
-
- 
+/* 
 #landuse_overlays[type='wetland'][zoom>11] {
 	[zoom>11][zoom<=14] { polygon-pattern-file:url(img/marsh-16.png); }
 	[zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
-}
+}*/
 
-/* ---- BUILDINGS ---- */
-#buildings[zoom>=14][zoom<=16] {
+/* ================================================================== */
+/* BUILDINGS */
+/* ================================================================== */
+
+#buildings[zoom>=12][zoom<=16] {
 	polygon-fill:@building;
 	[type='church'] {
 		polygon-fill: @building*0.85;
@@ -153,7 +182,7 @@ Map{
 Areal imagery and hillshading are giving a darker color to the sea.
 Here is a workaround to prevent this.
 */
-
+/*
 #background {
 	[zoom=12] { polygon-fill: @water*1.007; }
 	[zoom=11] { polygon-fill: @water*0.985; }
@@ -179,6 +208,14 @@ Here is a workaround to prevent this.
 	}
 	polygon-smooth: 0.6;
 	polygon-clip: false;
+}*/
+
+#water_gen0[zoom>3][zoom<=9],
+#water_gen1[zoom>9][zoom<=12],
+#water[zoom>12] {
+  polygon-fill: @water;
+  polygon-smooth: 0.6;
+  polygon-clip: false;
 }
 
 /* ================================================================== */
@@ -244,12 +281,14 @@ Here is a workaround to prevent this.
 /* ADMINISTRATIVE BOUNDARIES
 /* ================================================================== */
 
-#admin[admin_level=2][zoom>8]::case, #landesgrenzen[zoom<=8]::case {
+#admin[admin_level=2][zoom>8]::case,
+#landesgrenzen[zoom<=8]::case {
 	line-color: white;
 	line-width:3.5;
 	line-opacity: 0.4;
 	//line-smooth: 1;
 	//line-rasterizer: fast;
+    [zoom<2]         { line-opacity: 0; }
 	[zoom=2]          { line-opacity: 0.6; }
 	[zoom=3]          { line-opacity: 0.45; }
 	[zoom=4]          { line-opacity: 0.45; }
@@ -258,12 +297,14 @@ Here is a workaround to prevent this.
 	[zoom>=12]        { line-width: 6; }
 }
 
-#admin[admin_level=2][zoom>8]::body, #landesgrenzen[zoom<=8]::body {
+#admin[admin_level=2][zoom>8]::body,
+#landesgrenzen[zoom<=8]::body {
 	line-color: black;
 	line-width: 0.5;
 	line-opacity: 0.45;
 	//line-smooth: 1;
 	//line-rasterizer: fast;
+    [zoom<2] { line-opacity: 0; }
 	[zoom=2] { line-opacity: 0.5; }
 	[zoom=3] { line-opacity: 0.6; }
 	[zoom=4] { line-opacity: 0.6; line-width: 0.6;}
