@@ -1,6 +1,6 @@
 # Lyrk Map Style
 
-The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de) and on many more.
+The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de),[WG-OSM-Demo-Style-Service](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) and on many more.
 
 ## Installation
 
@@ -50,7 +50,7 @@ Optional: hillshanding and areal imagery can be added for nicer colors. Those fi
 
 # Deutsche Version
 
-Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) benutzt wird.
+Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) und [WG-OSM-Demo-Style-Service](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) benutzt wird.
 
 ## Installation
 
