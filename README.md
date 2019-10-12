@@ -1,6 +1,6 @@
 # Lyrk Map Style
 
-The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de), [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) and on many more.
+The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de), [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) and on many more. For the WhereGroup OSM demo style, there is this [overview page](https://wheregroup.com/unternehmen/Aktuelles/Details/wheregroup-OSM-demo-Dienst-wurde-aktualisiert-und-erweitert.html) with all the information.
 
 ## Installation
 
@@ -36,8 +36,8 @@ The following files need to be downloaded and stored inside the `shape` director
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces_lines.zip
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip
-* http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
-* http://data.openstreetmapdata.com/land-polygons-split-3857.zip
+* https://osmdata.openstreetmap.de/download/simplified-land-polygons-complete-3857.zip
+* https://osmdata.openstreetmap.de/download/land-polygons-split-3857.zip
 
 ### Raster Files
 
@@ -50,7 +50,7 @@ Optional: hillshanding and areal imagery can be added for nicer colors. Those fi
 
 # Deutsche Version
 
-Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) und [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) benutzt wird.
+Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) und [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) benutzt wird. Für den WhereGroup-OSM-Demo-Style gibt es diese [Übersichtseite](https://wheregroup.com/unternehmen/Aktuelles/Details/wheregroup-OSM-demo-Dienst-wurde-aktualisiert-und-erweitert.html) mit allen Informationen.
 
 ## Installation
 
@@ -85,8 +85,8 @@ Folgende Shapefiles sollten heruntergeladen und im `shape` verzeichnis ausgepack
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces_lines.zip
 * http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip
-* http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
-* http://data.openstreetmapdata.com/land-polygons-split-3857.zip
+* https://osmdata.openstreetmap.de/download/simplified-land-polygons-complete-3857.zip
+* https://osmdata.openstreetmap.de/download/land-polygons-split-3857.zip
 
 ### Raster Files
 
