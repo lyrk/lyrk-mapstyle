@@ -1073,7 +1073,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "( SELECT geometry, type, type AS \"addr:housenumber\"\nFROM osm_housenumbers_ways\nWHERE type NOT IN ('0','false', 'no')\nUNION\nSELECT geometry, type,\n  CASE\n    WHEN name NOT LIKE '' /*AND length(name)<10 THEN name*/ THEN  ''\n    ELSE type\n  END AS \"addr:housenumber\"\nFROM osm_housenumbers\nWHERE type NOT IN ('0','false', 'no')\n) AS data\n",
+        "table": "( SELECT geometry, type, type AS \"addr_housenumber\"\nFROM osm_housenumbers_ways\nWHERE type NOT IN ('0','false', 'no')\nUNION\nSELECT geometry, type,\n  CASE\n    WHEN name NOT LIKE '' /*AND length(name)<10 THEN name*/ THEN  ''\n    ELSE type\n  END AS \"addr_housenumber\"\nFROM osm_housenumbers\nWHERE type NOT IN ('0','false', 'no')\n) AS data\n",
         "key_field": "",
         "geometry_field": "geometry",
         "extent_cache": "auto",
