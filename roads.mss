@@ -329,10 +329,10 @@ come in as well.
 		[stylegroup='noauto']   { line-width: @rdz13_min / 4; line-dasharray: 1,1; }
 		[stylegroup='railway']  { 
 			line-width: 0.7; 
-				line-opacity: 0.6;
+			line-opacity: 0.6;
 			[type='disused'] { line-width: 0.6;line-dasharray: 1,1;}
 			[type='abandoned'] {line-width: 0;}
-				[type='tram'] {line-width:0;}
+			[type='tram'] {line-width:0;}
 		}
 	}
 	[zoom=14] {
@@ -344,10 +344,10 @@ come in as well.
 		[stylegroup='noauto']   { line-width: @rdz14_min / 4; line-dasharray: 1,1; }
 		[stylegroup='railway']  {
 			line-opacity: 0.6;
-				line-width: 1; 
+			line-width: 1;
 			[type='disused'] { line-width: 0.8;line-dasharray: 1,1;}
 			[type='abandoned'] {line-width: 0;}
-				[type='tram'] {line-color: @rail_line*1.2; line-width:0;}
+			[type='tram'] {line-color: @rail_line*1.2; line-width:0;}
 		}
 	}
 	[zoom=15] {
@@ -359,10 +359,10 @@ come in as well.
 		[stylegroup='noauto']   { line-width: @rdz14_min / 2.5; line-color: @pedestrian_line*1.05;}
 		[stylegroup='railway']  { 
 			line-opacity: 0.6;
-				line-width: 1.2; 
+			line-width: 1.2;
 			[type='disused'] { line-width: 0.8;line-dasharray: 1,1;}
 			[type='abandoned'] {line-width: 0;}
-				[type='tram'] {line-color: @rail_line*1.1;}
+			[type='tram'] {line-color: @rail_line*1.1;}
 		}
 	}
 	[zoom=16] {
@@ -374,10 +374,10 @@ come in as well.
 		[stylegroup='noauto']   { line-width: @rdz14_min / 1; line-color: @pedestrian_line*1.02; }
 		[stylegroup='railway']  { 
 			line-width: 2; 
-				line-opacity: 0.6;
+			line-opacity: 0.6;
 			[type='disused'] { line-width: 1.5;line-dasharray: 1,1;}
 			[type='abandoned'] {line-width: 0;}
-				[type='tram'] {line-color: @rail_line*1.1;line-width: 1.5; }
+			[type='tram'] {line-color: @rail_line*1.1;line-width: 1.5; }
 		}
 	}
 	[zoom=17] {
