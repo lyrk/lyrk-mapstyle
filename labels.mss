@@ -493,6 +493,13 @@
 	shield-fill: #fff;
 	shield-file: url('img/shield-motorway-1.png');
 	shield-avoid-edges: true;
+    shield-line-spacing: -1.50;
+    shield-spacing: 760;
+    shield-repeat-distance: 400;
+    shield-placement: line;
+    shield-margin: 40;
+    shield-clip: false;
+    shield-min-padding: 31;
 	[type='motorway'] {
 		[reflen=1] { shield-file: url('img/shield-motorway-1.png'); }
 		[reflen=2] { shield-file: url('img/shield-motorway-2.png'); }
@@ -513,12 +520,14 @@
 		[reflen=7] { shield-file: url('img/shield-trunk-7.png'); }
 		[reflen=8] { shield-file: url('img/shield-trunk-8.png'); }
 	}
+  /**
 	[zoom=9]  { shield-min-distance: 30; }
 	[zoom=10] { shield-min-distance: 50; }
 	[zoom=11] { shield-min-distance: 60; }
 	[zoom=12] { shield-min-distance: 80; }
 	[zoom=13] { shield-min-distance: 120; }
 	[zoom=14] { shield-min-distance: 180; }
+  **/
 }
 
 #motorway_label[type='motorway'][zoom>9],
