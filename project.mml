@@ -258,7 +258,6 @@
         85.051
       ],
       "advanced": {},
-      "status": "off",
       "layerId": "landuse"
     },
     {
@@ -390,7 +389,8 @@
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
       "name": "naturalearth",
-      "layerId": "naturalearth"
+      "layerId": "naturalearth",
+      "status": "off"
     },
     {
       "Datasource": {
@@ -518,7 +518,6 @@
         85.051
       ],
       "advanced": {},
-      "status": "off",
       "layerId": "landuse_overlays"
     },
     {
@@ -1151,6 +1150,35 @@
       "advanced": {},
       "name": "laender_abk",
       "layerId": "laender_abk"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        11.237300372107942,
+        51.35748342474311,
+        15.040629924596544,
+        53.55840456587284
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT geometry, type, name \n  FROM osm_transport_points \n  WHERE type='station' AND ((name is NOT NULL) AND (name <> ''))\n) AS DATA ",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent_cache": "auto",
+        "extent": "1250930.55531412,6684773.68119922,1674315.26441616,7086963.07163982",
+        "dbname": "osm_lyrk_github_bugfix",
+        "host": "127.0.0.1",
+        "port": "5432",
+        "user": "osm",
+        "password": "osm"
+      },
+      "id": "train_stations",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "train_stations",
+      "layerId": "train_stations"
     }
   ],
   "scale": 1,
