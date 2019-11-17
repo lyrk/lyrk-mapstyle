@@ -231,7 +231,7 @@
         },
         {
           "type": "integer",
-          "name": "building:levels",
+          "name": "building_levels",
           "key": "building:levels"
         },
         {
