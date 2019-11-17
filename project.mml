@@ -1166,7 +1166,7 @@
         "geometry_field": "geometry",
         "extent_cache": "auto",
         "extent": "1250930.55531412,6684773.68119922,1674315.26441616,7086963.07163982",
-        "dbname": "osm_lyrk_github_bugfix",
+        "dbname": "osm",
         "host": "127.0.0.1",
         "port": "5432",
         "user": "osm",
