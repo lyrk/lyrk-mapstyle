@@ -2,3 +2,5 @@
 /.idea/
 /.thumb.png
 
+# imposm-conf-File
+/imposm/imposm_conf.json

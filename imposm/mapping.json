@@ -231,7 +231,7 @@
         },
         {
           "type": "integer",
-          "name": "building:levels",
+          "name": "building_levels",
           "key": "building:levels"
         },
         {
@@ -845,6 +845,16 @@
           "key": "name"
         },
         {
+          "type": "string",
+          "name": "addr_housename",
+          "key": "addr:housename"
+        },
+        {
+          "type": "string",
+          "name": "addr_unit",
+          "key": "addr:unit"
+        },
+        {
           "type": "mapping_value",
           "name": "type",
           "key": null
@@ -853,6 +863,12 @@
       "type": "point",
       "mapping": {
         "addr:housenumber": [
+          "__any__"
+        ],
+        "addr:housename": [
+          "__any__"
+        ],
+        "addr:unit": [
           "__any__"
         ]
       }
@@ -875,14 +891,35 @@
           "key": "name"
         },
         {
+          "type": "string",
+          "name": "addr_housename",
+          "key": "addr:housename"
+        },
+        {
+          "type": "string",
+          "name": "addr_unit",
+          "key": "addr:unit"
+        },
+        {
           "type": "mapping_value",
           "name": "type",
+          "key": null
+        },
+        {
+          "type": "webmerc_area",
+          "name": "area",
           "key": null
         }
       ],
       "type": "polygon",
       "mapping": {
         "addr:housenumber": [
+          "__any__"
+        ],
+        "addr:housename": [
+          "__any__"
+        ],
+        "addr:unit": [
           "__any__"
         ]
       }
