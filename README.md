@@ -6,7 +6,7 @@ The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.c
 
 The style is based on the imposm version of OSM Bright, thus it needs [imposm3](https://github.com/omniscale/imposm3) for importing the data. The mapping file for imposm is located under `imposm/mapping.json`. The database can be imported by running `imposm3 import -read germany-latest.osm.pbf -write -mapping imposm/mapping.json -connection postgis://localhost/osm_imposm -deployproduction`.
 
-The mapnik.xml can be generated using [magnacarto](https://github.com/omniscale/magnacarto) or [kosmtik](https://github.com/kosmtik/kosmtik/) or [tilemill (tileoven)](https://github.com/florianf/tileoven).
+The mapnik.xml can be generated using [magnacarto](https://github.com/omniscale/magnacarto) or [kosmtik](https://github.com/kosmtik/kosmtik/) or [tilemill](https://github.com/tilemill-project/tilemill).
 
 ### Magnacarto
 
@@ -56,7 +56,7 @@ Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Sty
 
 Der Style setzt auf der imposm-Version von OSM Bright auf, setzt also auf der Datenbankseite [imposm3](https://github.com/omniscale/imposm3) voraus. Das Mappingfile dazu findet sich unter `imposm/mapping.json`. Die Datenbank kann also z.B. mit `imposm3 import -read germany-latest.osm.pbf -write -mapping imposm/mapping.json -connection postgis://localhost/osm_imposm -deployproduction` importiert werden.
 
-Zum Editieren und Erzeugen der mapnik.xml kann entweder [magnacarto](https://github.com/omniscale/magnacarto) oder [kosmtik](https://github.com/kosmtik/kosmtik/) oder  or [tilemill (tileoven)](https://github.com/florianf/tileoven) verwendet werden.
+Zum Editieren und Erzeugen der mapnik.xml kann entweder [magnacarto](https://github.com/omniscale/magnacarto) oder [kosmtik](https://github.com/kosmtik/kosmtik/) oder [tilemill](https://github.com/tilemill-project/tilemill) verwendet werden.
 
 ### Magnacarto
 
