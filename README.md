@@ -17,7 +17,7 @@ This style has been tested with the following libraries:
 - Imposm: 0.10.0
 - Magnacarto: 0.1dev-20180115-39b3cd9
 
-#####Note:
+_Note:_
 - If a newer version of Mapnik is used, there may be rendering problems because some CartoCss rules are no longer supported.
 
 - If there are translation problems in magnacarto, you can use the tilemill editor to create a mapnik.xml file.
@@ -81,7 +81,7 @@ This style has been tested with the following libraries:
 - Imposm: 0.10.0
 - Magnacarto: 0.1dev-20180115-39b3cd9
     
-#####Note:
+_Note:_
 - Wenn eine neuere Mapnik-Version genutzt wird, kann es zu Renderingproblemen kommen, da einige CartoCss-Regeln nicht mehr unterstützt werden.
     
 - Wenn es zu Übersetzungsproblemen in magnacarto kommt, dann kannst du den Tilemill-Editor benutzen, um ein mapnik.xml-File zu erzeugen.
