@@ -1,6 +1,6 @@
 # Lyrk Map Style
 
-The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de), [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) and on many more. For the WhereGroup OSM demo style, there is this [overview page](https://wheregroup.com/unternehmen/Aktuelles/Details/wheregroup-OSM-demo-Dienst-wurde-aktualisiert-und-erweitert.html) with all the information.
+The Lyrk OpenStreetMap Style is based on the [OSM Bright Style](https://github.com/mapbox/osm-bright) and is used on the [Accomodation Map](http://unterkunftskarte.de), [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) and on many more. For the WhereGroup OSM demo style, there is this [overview page](https://wheregroup.com/unternehmen/aktuelles/details/wheregroup-osm-demo-dienst-wurde-aktualisiert-und-erweitert/) with all the information.
 
 ## Installation
 
@@ -12,9 +12,9 @@ The mapnik.xml can be generated using [magnacarto](https://github.com/omniscale/
 
 This style has been tested with the following libraries:
 - Mapnik: 3.0.12
-- Postgresql: 9.6.x
-- Postgis: 2.3.1
-- Imposm: 0.10.0
+- Postgresql: 13.x
+- Postgis: 3.0.x
+- Imposm: 0.11.0
 - Magnacarto: 0.1dev-20180115-39b3cd9
 
 _Note:_
@@ -64,7 +64,7 @@ Optional: hillshanding and areal imagery can be added for nicer colors. Those fi
 
 # Deutsche Version
 
-Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) und [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) benutzt wird. Für den WhereGroup-OSM-Demo-Style gibt es diese [Übersichtseite](https://wheregroup.com/unternehmen/Aktuelles/Details/wheregroup-OSM-demo-Dienst-wurde-aktualisiert-und-erweitert.html) mit allen Informationen.
+Der Lyrk-Mapstyle ist ein OpenStreetMap-Kartenstyle, der auf dem [OSM-Bright Style](https://github.com/mapbox/osm-bright) aufsetzt und z.B. auf der [Unterkunftskarte](http://unterkunftskarte.de) und [WhereGroup-OSM-Demo-Style](https://osm-demo.wheregroup.com/karte/#14/50.7386/7.0854) benutzt wird. Für den WhereGroup-OSM-Demo-Style gibt es diese [Übersichtseite](https://wheregroup.com/unternehmen/aktuelles/details/wheregroup-osm-demo-dienst-wurde-aktualisiert-und-erweitert/) mit allen Informationen.
 
 ## Installation
 
@@ -76,9 +76,9 @@ Zum Editieren und Erzeugen der mapnik.xml kann entweder [magnacarto](https://git
     
 This style has been tested with the following libraries:
 - Mapnik: 3.0.12
-- Postgresql: 9.6.x
-- Postgis: 2.3.1
-- Imposm: 0.10.0
+- Postgresql: 13.x
+- Postgis: 3.0.x
+- Imposm: 0.11.0
 - Magnacarto: 0.1dev-20180115-39b3cd9
     
 _Note:_
